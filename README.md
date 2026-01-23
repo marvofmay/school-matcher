@@ -12,7 +12,7 @@
 ## Założenia
 
 Projekt został zrealizowany w **Symfony 8** z podziałem na warstwy zgodnie z 
-**DDD + Clean / Hexagonal Architecture** zgodnie z zasadami **SOLID**.
+**DDD + Clean / Hexagonal Architecture** oraz zgodnie z zasadami **SOLID**.
 
 - Logika domenowa jest całkowicie niezależna od frameworka  
   (brak zależności od Symfony w warstwie **Domain**)
