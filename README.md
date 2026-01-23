@@ -69,7 +69,7 @@ Wywołanie endpoint'a w przeglądarce:
 http://127.0.0.1:81/api/school/match?name=mickieiwcz
 ````
 
-Wywołanie endpoint'a W POSTMAN (tworzymy request GET_:
+Wywołanie endpoint'a W POSTMAN (tworzymy request GET):
 ```bash
 http://127.0.0.1:81//api/school/match?name=Mickiewicz
 ```
