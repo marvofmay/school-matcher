@@ -1,0 +1,39 @@
+# Symfony / lokalne konfiguracje
+.env.local
+.env.local.php
+.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+
+# Symfony / cache, logi, build
+/var/
+/public/bundles/
+/vendor/
+/symfony.lock
+
+# IDE / edytory
+.idea/
+*.iml
+
+# PHP CS Fixer
+/.php-cs-fixer.cache
+/.php-cs-fixer.php
+
+# PHPUnit
+/phpunit.xml
+/.phpunit.cache/
+
+# PHPStan
+phpstan.neon
+phpstan.result.cache
+
+# Composer
+composer.lock
+
+# Docker
+docker-compose.override.yml
+*.dockerfile
+
+# Systemowe / tymczasowe
+.DS_Store
+Thumbs.db
+*.swp

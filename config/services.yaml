@@ -1,0 +1,13 @@
+parameters:
+    school.data_file: '%kernel.project_dir%/config/data/schools.txt'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '../src/'
+
+    App\Module\School\Domain\Service\SchoolMatcher:
+        factory: [ '@App\Module\School\Infrastructure\Factory\SchoolMatcherFactory', '__invoke' ]
