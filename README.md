@@ -25,6 +25,9 @@ Projekt został zrealizowany w **Symfony 8** z podziałem na warstwy zgodnie z
   **PHPStan (level = 6)**
 - Testy zostały napisane w **PHPUnit**
 - Kod został doprowadzony do stanu **bez warningów PHPStan i PHPUnit**, co było jednym z kluczowych celów jakościowych projektu.
+
+<img width="1430" height="993" alt="2026-01-23_12-34" src="https://github.com/user-attachments/assets/58211de2-5b58-4299-aaa9-bd6de87a0ad2" />
+  
 ---
 
 ## Uruchomienie projektu 
