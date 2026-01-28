@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Module\School\Application\Interface;
+namespace App\Module\School\Domain\Interface;
 
 interface SchoolMatcherInterface
 {

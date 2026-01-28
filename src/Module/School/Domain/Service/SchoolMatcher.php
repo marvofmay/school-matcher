@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Module\School\Domain\Service;
 
-use App\Module\School\Application\Interface\SchoolMatcherInterface;
 use App\Module\School\Domain\Entity\School;
+use App\Module\School\Domain\Interface\SchoolMatcherInterface;
 use App\Module\School\Domain\ValueObject\MatchScore;
 
 final readonly class SchoolMatcher implements SchoolMatcherInterface
