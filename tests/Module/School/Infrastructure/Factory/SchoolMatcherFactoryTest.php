@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Tests\Module\School\Infrastructure\Factory;
 
 use App\Module\School\Domain\Entity\School;
+use App\Module\School\Domain\ValueObject\SchoolMatch;
 use App\Module\School\Domain\ValueObject\SchoolName;
 use App\Module\School\Infrastructure\Factory\SchoolMatcherFactory;
 use App\Module\School\Infrastructure\Interface\SchoolLoaderInterface;
@@ -42,10 +43,18 @@ final class SchoolMatcherFactoryTest extends TestCase
 
         $results = $matcher->match('Alpha');
         $this->assertNotEmpty($results);
-        $this->assertSame('Alpha School', $results[0]['school']);
+
+        $match = $results[0];
+        $this->assertInstanceOf(SchoolMatch::class, $match);
+        $this->assertSame('Alpha School', $match->school());
+        $this->assertGreaterThan(0, $match->score());
 
         $results = $matcher->match('Beta');
         $this->assertNotEmpty($results);
-        $this->assertSame('Beta School', $results[0]['school']);
+
+        $match = $results[0];
+        $this->assertInstanceOf(SchoolMatch::class, $match);
+        $this->assertSame('Beta School', $match->school());
+        $this->assertGreaterThan(0, $match->score());
     }
 }

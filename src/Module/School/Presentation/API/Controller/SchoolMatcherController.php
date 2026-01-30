@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Module\School\Presentation\API\Controller;
 
-use App\Module\School\Application\DTO\SchoolQueryDTO;
+use App\Module\School\Application\DTO\Request\SchoolQueryDTO;
 use App\Module\School\Application\Query\SchoolMatcherQuery;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;

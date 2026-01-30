@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Module\School\Presentation\API\Controller;
 
-use App\Module\School\Application\DTO\SchoolQueryDTO;
+use App\Module\School\Application\DTO\Request\SchoolQueryDTO;
 use App\Module\School\Application\Query\SchoolMatcherQuery;
 use App\Module\School\Presentation\API\Controller\SchoolMatcherController;
 use PHPUnit\Framework\TestCase;

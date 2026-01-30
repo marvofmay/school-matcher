@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Module\School\Application\DTO;
+namespace App\Module\School\Application\DTO\Request;
 
 use App\Module\School\Application\Interface\QueryDTOInterface;
 use Symfony\Component\Validator\Constraints as Assert;

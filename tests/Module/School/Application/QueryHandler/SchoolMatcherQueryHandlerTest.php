@@ -6,12 +6,13 @@ namespace App\Tests\Module\School\Application\QueryHandler;
 
 use App\Module\School\Domain\Entity\School;
 use App\Module\School\Domain\Service\SchoolMatcher;
+use App\Module\School\Domain\ValueObject\SchoolMatch;
 use App\Module\School\Domain\ValueObject\SchoolName;
 use PHPUnit\Framework\TestCase;
 
 final class SchoolMatcherQueryHandlerTest extends TestCase
 {
-    public function testMatchReturnsArrayWithScore(): void
+    public function testMatchReturnsSchoolMatchWithScore(): void
     {
         $school = School::create(
             SchoolName::create('I Liceum Ogólnokształcące'),
@@ -25,11 +26,14 @@ final class SchoolMatcherQueryHandlerTest extends TestCase
         $matches = $matcher->match('I Liceum Ogólnokształcące');
 
         $this->assertCount(1, $matches);
-
-        $this->assertArrayHasKey('school', $matches[0]);
-        $this->assertArrayHasKey('score', $matches[0]);
-
-        $this->assertSame('I Liceum Ogólnokształcące', $matches[0]['school']);
-        $this->assertGreaterThanOrEqual(70, $matches[0]['score']);
+        $this->assertInstanceOf(SchoolMatch::class, $matches[0]);
+        $this->assertSame(
+            'I Liceum Ogólnokształcące',
+            $matches[0]->school()->getOfficialName()->getValue()
+        );
+        $this->assertGreaterThanOrEqual(
+            70,
+            $matches[0]->score()->value()
+        );
     }
 }

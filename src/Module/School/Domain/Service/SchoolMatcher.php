@@ -7,6 +7,7 @@ namespace App\Module\School\Domain\Service;
 use App\Module\School\Domain\Entity\School;
 use App\Module\School\Domain\Interface\SchoolMatcherInterface;
 use App\Module\School\Domain\ValueObject\MatchScore;
+use App\Module\School\Domain\ValueObject\SchoolMatch;
 
 final readonly class SchoolMatcher implements SchoolMatcherInterface
 {
@@ -17,6 +18,9 @@ final readonly class SchoolMatcher implements SchoolMatcherInterface
     {
     }
 
+    /**
+     * @return SchoolMatch[]
+     */
     public function match(string $name, ?string $city = null, ?string $type = null): array
     {
         $results = [];
@@ -36,15 +40,17 @@ final readonly class SchoolMatcher implements SchoolMatcherInterface
             }
 
             $score = new MatchScore($best);
+
             if ($score->isAcceptable()) {
-                $results[] = [
-                    'school' => $school->getOfficialName()->getValue(),
-                    'score'  => $score->value(),
-                ];
+                $results[] = new SchoolMatch($school, $score);
             }
         }
 
-        usort($results, fn ($a, $b) => $b['score'] <=> $a['score']);
+        usort(
+            $results,
+            fn (SchoolMatch $a, SchoolMatch $b) =>
+                $b->score()->value() <=> $a->score()->value()
+        );
 
         return $results;
     }

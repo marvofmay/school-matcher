@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Module\School\Application\DTO;
 
-use App\Module\School\Application\DTO\SchoolQueryDTO;
+use App\Module\School\Application\DTO\Request\SchoolQueryDTO;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
